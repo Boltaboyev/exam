@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+}
+
+::selection {
+    background: #323a56;
+    color: #fff;
+}
+
+* {
+    transition: 0.2s;
+}
+
+.container2 {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+    .container2 {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 420px) {
+    .container2 {
+        max-width: 90%;
+    }
+}
+
+.login svg path {
+    transition: 0.1s !important;
+}
+
+.login:hover svg path,
+.search:hover svg path {
+    @apply stroke-primary !important;
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    @apply bg-primary;
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    @apply bg-primary;
+}
+
+#navbar:checked + ul {
+    left: 0;
+}
+
+#search:checked + div {
+    top: 90px;
+}
+
+#login:checked + div {
+    display: flex;
+}
+
+/* btn */
+.btn {
+    padding: 13px 35px;
+    border-radius: 8px;
+    @apply bg-primary;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 7px 12px 0 rgba(32, 81, 137, 0.24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    background: #004799;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    transition: 0s;
+}
+
+.btn_white {
+    background: #eff2f7;
+    box-shadow: 0 7px 12px 0 rgba(32, 81, 137, 0.24);
+    color: #323a56;
+}
+
+.btn_white:hover {
+    background: #eff2f7;
+    border-color: #004799;
+    color: #004799;
+}
+
+.feature-box {
+    transition: all 0.3s !important;
+}
+
+.feature-box:hover > div {
+    background: #004799;
+}
+
+.feature-box:hover svg path {
+    fill: #fff;
+}
+
+.project-grid-item,
+.teammates-social {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 15.62%,
+        rgba(32, 81, 137, 0.9) 100%
+    );
+}
+
+.project-img-box:hover > div {
+    bottom: 0;
+}
+
+.statistic,
+.sponsor,
+.banner {
+    background: url("../assets/img/items/bg.png");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.teammates-box:hover .teammates-social {
+    bottom: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+
+#sidebar:checked + aside {
+    left: 0;
+}
+
+#sidebar:checked ~ .black-blur {
+    display: block;
+}
