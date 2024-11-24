@@ -19,6 +19,14 @@ html {
     color: #fff;
 }
 
+.task-info::-webkit-scrollbar {
+    width: 2px;
+}
+
+.task-info::-webkit-scrollbar-thumb {
+    background: #eff2f7;
+}
+
 * {
     transition: 0.2s;
 }
@@ -65,15 +73,15 @@ html {
     @apply bg-primary;
 }
 
-#navbar:checked + ul {
+#navbar:checked+ul {
     left: 0;
 }
 
-#search:checked + div {
+#search:checked+div {
     top: 90px;
 }
 
-#login:checked + div {
+#login:checked+div {
     display: flex;
 }
 
@@ -119,7 +127,7 @@ html {
     transition: all 0.3s !important;
 }
 
-.feature-box:hover > div {
+.feature-box:hover>div {
     background: #004799;
 }
 
@@ -129,14 +137,12 @@ html {
 
 .project-grid-item,
 .teammates-social {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0) 15.62%,
-        rgba(32, 81, 137, 0.9) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0) 15.62%,
+            rgba(32, 81, 137, 0.9) 100%);
 }
 
-.project-img-box:hover > div {
+.project-img-box:hover>div {
     bottom: 0;
 }
 
@@ -159,10 +165,55 @@ html {
 }
 
 
-#sidebar:checked + aside {
+#sidebar:checked+aside {
     left: 0;
 }
 
-#sidebar:checked ~ .black-blur {
+#sidebar:checked~.black-blur {
     display: block;
+}
+
+.task-graph:first-child>div {
+    animation: completed 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes completed {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80%;
+    }
+}
+
+.task-graph:nth-child(2)>div {
+    animation: notyet 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes notyet {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 30%;
+    }
+}
+
+.task-graph:last-child>div {
+    animation: progress 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60%;
+    }
 }
