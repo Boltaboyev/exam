@@ -73,16 +73,20 @@ html {
     @apply bg-primary;
 }
 
-#navbar:checked+ul {
+#navbar:checked + ul {
     left: 0;
 }
 
-#search:checked+div {
+#search:checked + div {
     top: 90px;
 }
 
-#login:checked+div {
+#login:checked + div {
     display: flex;
+}
+
+#navbar:checked ~ .bg-blur {
+    display: block;
 }
 
 /* btn */
@@ -127,7 +131,7 @@ html {
     transition: all 0.3s !important;
 }
 
-.feature-box:hover>div {
+.feature-box:hover > div {
     background: #004799;
 }
 
@@ -137,12 +141,14 @@ html {
 
 .project-grid-item,
 .teammates-social {
-    background: linear-gradient(180deg,
-            rgba(255, 255, 255, 0) 15.62%,
-            rgba(32, 81, 137, 0.9) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 15.62%,
+        rgba(32, 81, 137, 0.9) 100%
+    );
 }
 
-.project-img-box:hover>div {
+.project-img-box:hover > div {
     bottom: 0;
 }
 
@@ -164,16 +170,15 @@ html {
     height: 100%;
 }
 
-
-#sidebar:checked+aside {
+#sidebar:checked + aside {
     left: 0;
 }
 
-#sidebar:checked~.black-blur {
+#sidebar:checked ~ .black-blur {
     display: block;
 }
 
-.task-graph:first-child>div {
+.task-graph:first-child > div {
     animation: completed 2s;
     animation-iteration-count: 1;
 }
@@ -188,7 +193,7 @@ html {
     }
 }
 
-.task-graph:nth-child(2)>div {
+.task-graph:nth-child(2) > div {
     animation: notyet 2s;
     animation-iteration-count: 1;
 }
@@ -203,7 +208,7 @@ html {
     }
 }
 
-.task-graph:last-child>div {
+.task-graph:last-child > div {
     animation: progress 2s;
     animation-iteration-count: 1;
 }
@@ -216,4 +221,23 @@ html {
     to {
         width: 60%;
     }
+}
+
+/* loader */
+
+.fav-loader {
+    animation: loader reverse linear infinite 1.5s;
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.loader_active {
+    opacity: 0;
 }

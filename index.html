@@ -32,7 +32,14 @@
 
 <body>
 
-    <header class="header py-[20px] shadow-[0_1px_3px_0_rgba(0,0,0,0.08)] z-50 bg-white sticky top-0">
+    <!-- loader -->
+    <div class="loader opacity-[1] h-[100vh] w-full fixed z-[2000] bg-white top-0 left-0 flex justify-center items-center">
+        <img src="./assets/img/items/fav.png" alt="" class="fav-loader" >
+    </div>
+    <!-- loader -->
+
+
+    <header class="header py-[20px] shadow-[0_1px_3px_0_rgba(0,0,0,0.08)] z-[999] bg-white sticky top-0">
         <div class="container2 flex justify-between items-center font-[500] text-[1em] text-title">
 
             <!-- hamburger -->
@@ -54,7 +61,7 @@
             <nav class="navbar-links flex justify-between items-center gap-[30px]">
                 <input type="checkbox" name="" id="navbar" class="hidden">
                 <ul
-                    class="flex justify-center items-center gap-[30px] max-[1100px]:border-r max-[1100px]:border-r-primary max-[1100px]:h-[calc(100vh_-_89px)] max-[500px]:h-[calc(100vh_-_78px)] max-[350px]:h-[calc(100vh_-_75px)] max-[1100px]:w-[40%] max-[1100px]:fixed max-[1100px]:left-[-100%] max-[1100px]:flex-col max-[1100px]:bottom-0 max-[1100px]:bg-bg max-[1100px]:z-[999] max-[650px]:w-[60%] max-[400px]:w-[70%] max-[300px]:w-[80%]">
+                    class="flex justify-center items-center gap-[30px] max-[1100px]:border-r max-[1100px]:border-r-primary  max-[1100px]:h-[calc(100vh_-_88px)] max-[500px]:h-[calc(100vh_-_77px)] max-[350px]:h-[calc(100vh_-_76px)] max-[1100px]:w-[40%] max-[1100px]:fixed max-[1100px]:left-[-100%] max-[1100px]:flex-col max-[1100px]:bottom-0 max-[1100px]:bg-bg max-[1100px]:z-[999] max-[650px]:w-[60%] max-[400px]:w-[70%] max-[300px]:w-[80%]">
                     <li><a href="#!" class="hover:text-primary">Asosiy</a></li>
                     <li><a href="#!" class="hover:text-primary">Kurslarimiz</a></li>
                     <li><a href="#!" class="hover:text-primary">Blog</a></li>
@@ -69,6 +76,9 @@
                         </button>
                     </form>
                 </ul>
+
+                <label for="navbar"
+                    class="bg-blur max-[1100px]:h-[calc(100vh_-_88px)] max-[500px]:h-[calc(100vh_-_77px)] max-[350px]:h-[calc(100vh_-_76px)] w-[100vw] bg-[#0000003d] backdrop-blur-[5px] fixed bottom-0 left-0 z-[888] hidden"></label>
 
                 <label for="search" class="cursor-pointer search max-[700px]:hidden">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,6 +116,8 @@
             </nav>
         </div>
     </header>
+
+
 
     <!-- input for search -->
     <input type="checkbox" name="" id="search" class="hidden">
@@ -1182,87 +1194,12 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script src="./js/app.js"></script>
+
     <script>
         AOS.init();
     </script>
 
-    <script>
-        // Hamburger animation -------------------------------------------------------------------------
-        document.getElementById("menu-icon").addEventListener("click", function () {
-            this.classList.toggle("active")
-        })
-
-        // Password type -------------------------------------------------------------------------------
-        const eye = document.querySelector('.fa-eye')
-        const eyeSlash = document.querySelector('.fa-eye-slash')
-        const pass = document.getElementById('pass')
-        eye.addEventListener('click', () => {
-            eye.classList.remove('fa-eye')
-            eye.classList.add('fa-eye-slash')
-            if (pass.type == 'password') {
-                pass.type = 'text'
-            } else {
-                pass.type = 'password'
-                eye.classList.add('fa-eye')
-                eye.classList.remove('fa-eye-slash')
-            }
-        })
-
-
-        // video pause and play btn ------------------------------------------------------------------------
-        let Video = document.getElementById("video")
-        let Btn = document.querySelector(".playBtn")
-
-        function Vid() {
-            Video.play()
-            Btn.style.display = "none"
-        }
-
-        function Vidstop() {
-            Video.pause()
-            Btn.style.display = "flex"
-        }
-
-        Btn.addEventListener("click", () => {
-            Vid()
-        })
-
-        Video.addEventListener("click", () => {
-            Vidstop()
-            Btn.style.background = '#1d72d2'
-        })
-
-
-        // swiper -----------------------------------------------------------
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            },
-            loop: true,
-            autoplay: {
-                delay: 4000,
-            },
-        });
-
-
-    </script>
 </body>
 
 </html>
